@@ -9,4 +9,11 @@ export default defineConfig({
     host: "0.0.0.0",
     allowedHosts: [".codeengineprod.blackbucks.me"],
   },
+  test: {
+    globals: true, // enables `describe`, `it` globally
+    environment: "jsdom", // simulate browser DOM
+    setupFiles: "./src/setupTests.js", // optional: setup file
+    reporters: ["json"],
+    outputFile: "result.json",
+  },
 });
